@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom styles for the piano keyboard */
+.piano-key {
+  @apply border border-gray-300 flex items-end justify-center pb-2 cursor-pointer;
+}
+
+.piano-key.white {
+  @apply bg-white text-black z-0 w-12 h-48;
+}
+
+.piano-key.black {
+  @apply bg-black text-white z-10 w-8 h-28 absolute;
+}
+
+/* Custom styles for the EQ sliders */
+.eq-slider {
+  @apply h-32 appearance-none bg-gray-700 rounded-full overflow-hidden;
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+}
+
+/* Custom styles for the transport controls */
+.transport-button {
+  @apply w-12 h-12 rounded-full flex items-center justify-center;
+}
+
+.transport-button.play {
+  @apply bg-green-500 hover:bg-green-600;
+}
+
+.transport-button.pause {
+  @apply bg-yellow-500 hover:bg-yellow-600;
+}
+
+.transport-button.stop {
+  @apply bg-red-500 hover:bg-red-600;
+}
+
+/* Custom styles for the pattern visualizer */
+.pattern-note {
+  @apply absolute rounded-full w-4 h-4;
+}
+
+.pattern-note.melody {
+  @apply bg-blue-500;
+}
+
+.pattern-note.rhythm {
+  @apply bg-red-500;
+}
+
+.pattern-note.harmony {
+  @apply bg-green-500;
+}
+
+.pattern-note.contrast {
+  @apply bg-purple-500;
+}
